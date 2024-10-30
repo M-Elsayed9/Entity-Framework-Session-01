@@ -1,4 +1,5 @@
 ﻿using Demo.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace Demo
 {
@@ -6,9 +7,8 @@ namespace Demo
     {
         static void Main(string[] args)
         {
-            G03DbContext context = new G03DbContext();
-            var result = context.Employees.Where(e => e.Equals("Mohamed")).FirstOrDefault();
-
+            //G03DbContext context = new G03DbContext();
+            //context.Database.Migrate();
         }
     }
 }

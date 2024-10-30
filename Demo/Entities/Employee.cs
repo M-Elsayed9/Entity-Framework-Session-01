@@ -54,6 +54,9 @@ namespace Demo.Entities
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
+        [NotMapped]
+        public int TotalSalary { get; set; }
+
         #endregion
     }
 }
