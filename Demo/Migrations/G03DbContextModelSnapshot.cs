@@ -40,7 +40,7 @@ namespace Demo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Departments", (string)null);
+                    b.ToTable("Departments");
                 });
 
             modelBuilder.Entity("Demo.Entities.Employee", b =>
@@ -61,12 +61,15 @@ namespace Demo.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar");
 
                     b.Property<string>("EmpName")
                         .IsRequired()
+                        .ValueGeneratedOnAdd()
                         .HasMaxLength(50)
-                        .HasColumnType("varchar");
+                        .HasColumnType("varchar")
+                        .HasDefaultValue("EMpl");
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -79,9 +82,12 @@ namespace Demo.Migrations
                     b.Property<decimal>("Salary")
                         .HasColumnType("Money");
 
+                    b.Property<int>("TotalSalary")
+                        .HasColumnType("int");
+
                     b.HasKey("EmpId");
 
-                    b.ToTable("Employees", (string)null);
+                    b.ToTable("Employees");
                 });
 #pragma warning restore 612, 618
         }

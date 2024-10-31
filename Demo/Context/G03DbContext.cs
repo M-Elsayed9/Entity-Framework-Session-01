@@ -20,7 +20,6 @@ namespace Demo.Context
         {
             modelBuilder.ApplyConfiguration<Employee>(new EmployeeConfiguration());
 
-            //modelBuilder.ApplyConfigurationsFromAssembly(modelBuilder.GetType().Assembly);
             //modelBuilder.Entity<Employee>().HasKey(e => e.EmpId);
 
             //modelBuilder.Entity<Employee>().Property(e => e.EmpId /*or "EmpId" or nameof(Employee.EmpId) */).UseIdentityColumn(1, 1);
@@ -53,11 +52,8 @@ namespace Demo.Context
             //});
 
 
-
             base.OnModelCreating(modelBuilder);
         }
-
-
 
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Department> Departments { get; set; }
