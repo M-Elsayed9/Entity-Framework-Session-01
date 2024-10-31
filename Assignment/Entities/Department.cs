@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace Assignment.Entities
 {
+    // by Configuration
     internal class Department
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int instId { get; set; }
-        public DateTime? Hiring_Date { get; set; }
+        public int InstId { get; set; }
+        public DateOnly? Hiring_Date { get; set; }
             
     }
 }
